@@ -1,13 +1,14 @@
 # src/ml_model.py
 import numpy as np  # <-- FIX: Import numpy
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+#from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import pandas_ta as ta
 import logging
 
 def get_ml_prediction(df):
-    """Trains a Decision Tree to predict next day's price movement."""
+    
     # 1. Feature Engineering
     df.ta.macd(append=True)
     df.ta.rsi(append=True)
@@ -30,7 +31,8 @@ def get_ml_prediction(df):
 
     # 2. Model Training & Evaluation
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
-    model = DecisionTreeClassifier(max_depth=5, random_state=42)
+    #model = DecisionTreeClassifier(max_depth=5, random_state=42)
+    model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight='balanced')
     model.fit(X_train, y_train)
     accuracy = accuracy_score(y_test, model.predict(X_test))
     
@@ -40,3 +42,5 @@ def get_ml_prediction(df):
     
     logging.info(f"ML Model Accuracy: {accuracy:.2f}, Prediction: {prediction_label}")
     return prediction_label, accuracy
+
+
