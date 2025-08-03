@@ -2,7 +2,7 @@
 
 A Python-based prototype for an algorithmic trading system that backtests a trading strategy, uses a simple ML model for prediction, and logs results automatically to Google Sheets.
 
-## Features 🚀
+## Features
 Fetches daily stock data for specified tickers (e.g., NIFTY 50 stocks) using the yfinance library.
 
 Implements and backtests a trading strategy based on RSI + Moving Average Crossover.
@@ -13,7 +13,7 @@ Automatically logs detailed trade data and performance summaries (P&L, Win Ratio
 
 Built with a modular and scalable project structure for easy maintenance and expansion.
 
-## Tech Stack & Libraries 🛠️
+## Tech Stack & Libraries 
 
 Pandas: For data manipulation and analysis.
 
@@ -27,7 +27,7 @@ gspread: To interact with the Google Sheets API.
 
 schedule: For scheduling the script to run automatically.
 
-## Configuration 🔑
+## Configuration
 You must configure two things before running the script:
 
 ### 1. Google Sheets API Credentials
