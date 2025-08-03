@@ -1,0 +1,7 @@
+pandas
+yfinance
+pandas-ta
+scikit-learn
+gspread
+oauth2client
+schedule

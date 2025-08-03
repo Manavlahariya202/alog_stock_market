@@ -1,0 +1,16 @@
+# Credentials
+config/creds.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env
+
+
+
+
+
+
